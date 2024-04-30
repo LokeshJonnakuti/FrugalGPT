@@ -70,12 +70,13 @@ class LLMCascade(object):
               trainingdata=None,
               budget=0.1,
               cascade_depth=3,
-              service_names =['openaichat/gpt-3.5-turbo','openaichat/gpt-4'],
+              service_names =None,
               metric="em",
               genparams=GenerationParameter(max_tokens=50, temperature=0.1, stop=['\n']),
               no_scorer_train=False,
               score_type='DistilBert',
               ):
+        service_names = ['openaichat/gpt-3.5-turbo','openaichat/gpt-4'] if service_names is None else service_names
         self.no_scorer_train = no_scorer_train
         self.score_type = score_type
         # Three major steps

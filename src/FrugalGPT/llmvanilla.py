@@ -136,7 +136,7 @@ class LLMVanilla(object):
 
     def get_completion_allservice(self, 
                       query:str,
-                      service_names = [''],
+                      service_names = None,
                       use_save=False,
                       use_db = True,
                       savepath="raw.pkl",
@@ -145,6 +145,7 @@ class LLMVanilla(object):
                                                    stop=["\n"],
 ),
                       ):
+        service_names = [''] if service_names is None else service_names
         result = list()
         for name in service_names:
             answer = self.get_completion(query=query,

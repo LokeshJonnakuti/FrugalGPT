@@ -17,10 +17,11 @@ class GenerationParameter(object):
     def __init__(self,
                  max_tokens=100,
                  temperature=0.1,
-                 stop=["\n"],
+                 stop=None,
                  date="20230301",
                  trial = 0,
                  ):
+        stop = ["\n"] if stop is None else stop
         self.max_tokens=max_tokens
         self.temperature=temperature
         self.stop = stop
