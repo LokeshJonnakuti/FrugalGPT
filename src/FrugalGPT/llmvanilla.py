@@ -5,8 +5,6 @@ from transformers import GPT2Tokenizer
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 from .utils import help, getservicename
 
-global mydict
-
 serviceidmap = json.load(open("config/serviceidmap.json"))
 
 def form_keys(service_id,
