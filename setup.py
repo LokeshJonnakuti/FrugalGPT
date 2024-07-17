@@ -21,6 +21,7 @@ setup(
         'torch',
         'transformers',
         'accelerate',
+        "fickling>=0.1.3,~=0.1.0",
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
