@@ -10,6 +10,7 @@ import anthropic
 #from transformers import CodeGenTokenizerFast
 #tokenizer_FFAI = CodeGenTokenizerFast.from_pretrained("Salesforce/codegen-350M-mono")
 from transformers import GPT2Tokenizer
+import fickling
 
 tokenizer_FFAI = GPT2Tokenizer.from_pretrained("gpt2")
 
@@ -88,7 +89,7 @@ class APIModelProvider(ModelService):
 
     def read_response(self, path="test"):
         f = open(path, 'rb')
-        self.response = pickle.load(f)
+        self.response = fickling.load(f)
         #self._response2pred(self.response)
         f.close()
         try:
